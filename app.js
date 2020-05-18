@@ -56,6 +56,10 @@ let r2 = createTable(document.querySelector("#tabr2"));
 
 update();
 
+window.onbeforeunload = function() {
+   return "Czy na pewno chcesz zamknąć aplikację?";
+};
+
 function update(){
 	setTableData(s1, tab,"s", 0);
 	setTableData(r1, tab,"r", 0);
