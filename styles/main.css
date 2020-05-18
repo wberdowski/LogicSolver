@@ -1,6 +1,27 @@
 body {
-	text-size: 14px;
+	font-size: 14px;
 	font-family: "Roboto", sans-serif;
+}
+
+button {
+	padding: 10px;
+	color: #fff;
+	background-color: #07f;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	min-width: 100px;
+	outline: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #08f;
+}
+
+button:active {
+	background-color: #04d;
 }
 
 table {
@@ -8,22 +29,26 @@ table {
 	border-collapse: collapse;
 }
 
-table td, table th{
-	border: 1px solid #777;
+table td, table th {
 	font-size: 20px;
-	font-family: "Consolas", sans-serif;
 	text-align: center;
 }
 
-.results td {
-	padding: 8px;
-	width: 40px;
-}
-
 table th {
-	background-color: #ddd;
+	background-color: #67707b;
+	color: #fff;
 	padding: 8px;
 	font-size: 16px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+
+table td {
+	font-family: "Consolas", sans-serif;
+	border: 1px solid #ddd;
+}
+
+table tr:nth-child(odd) td {
+	background: #f4f4f4;
 }
 
 table input {
@@ -34,6 +59,7 @@ table input {
 	font-size: 20px;
 	font-family: "Consolas", sans-serif;
 	outline: none;
+	background: none;
 }
 
 table input:focus {
@@ -48,4 +74,27 @@ table input::placeholder {
 	position: fixed;
 	top: 8px;
 	right: 8px;
+}
+
+.results-grid {
+	display: flex;
+	flex-direction: column;
+}
+
+.results-row {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.results-container {
+}
+
+.results {
+	margin: 8px;
+}
+
+.results td {
+	padding: 8px;
+	width: 40px;
 }

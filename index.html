@@ -20,27 +20,35 @@
 
 	<table id="cheatsheet">
 		<tr><th colspan="2">Q<sub>n</sub> -> Q<sub>n+1</sub></th><th>S</th><th>R</th><th>J</th><th>K</th><th>D</th></tr>
-		<tr><td>0</td><td>0</td><td>0</td><td>---</td><td>0</td><td>---</td><td>0</td></tr>
-		<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>---</td><td>1</td></tr>
-		<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>---</td><td>1</td><td>0</td></tr>
-		<tr><td>1</td><td>1</td><td>---</td><td>0</td><td>---</td><td>0</td><td>1</td></tr>
+		<tr><td>0</td><td>0</td><td>0</td><td>-</td><td>0</td><td>-</td><td>0</td></tr>
+		<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>-</td><td>1</td></tr>
+		<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>-</td><td>1</td><td>0</td></tr>
+		<tr><td>1</td><td>1</td><td>-</td><td>0</td><td>-</td><td>0</td><td>1</td></tr>
 	</table>
 
-	<h2>S1</h2>
-	<table id="tabs1" class="results"></table>
-	<h2>R1</h2>
-	<table id="tabr1" class="results"></table>
-	<h2>S2</h2>
-	<table id="tabs2" class="results"></table>
-	<h2>R2</h2>
-	<table id="tabr2" class="results"></table>
-	<script>
-		window.addEventListener('load', function () {
-			createTableS1(tabs1, 0);
-			createTableR1(tabr1, 0);
-			createTableS1(tabs2, 1);
-			createTableR1(tabr2, 1);
-		})
-	</script>
+	<div class="results-grid">
+		<div class="results-row">
+			<div class="results-container">
+				<h2>S1</h2>
+				<table id="tabs1" class="results"></table>
+			</div>
+
+			<div class="results-container">
+				<h2>R1</h2>
+				<table id="tabr1" class="results"></table>
+			</div>
+		</div>
+		<div class="results-row">
+			<div class="results-container">
+				<h2>S2</h2>
+				<table id="tabs2" class="results"></table>
+			</div>
+
+			<div class="results-container">
+				<h2>R2</h2>
+				<table id="tabr2" class="results"></table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
