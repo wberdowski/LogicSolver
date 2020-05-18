@@ -1,0 +1,51 @@
+body {
+	text-size: 14px;
+	font-family: "Roboto", sans-serif;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table td, table th{
+	border: 1px solid #777;
+	font-size: 20px;
+	font-family: "Consolas", sans-serif;
+	text-align: center;
+}
+
+.results td {
+	padding: 8px;
+	width: 40px;
+}
+
+table th {
+	background-color: #ddd;
+	padding: 8px;
+	font-size: 16px;
+}
+
+table input {
+	width: 60px;
+	border: none;
+	text-align: center;
+	padding: 8px;
+	font-size: 20px;
+	font-family: "Consolas", sans-serif;
+	outline: none;
+}
+
+table input:focus {
+	box-shadow: 0 0 0 3px #07f;
+}
+
+table input::placeholder {
+	color: #ccc;
+}
+
+#cheatsheet {
+	position: fixed;
+	top: 8px;
+	right: 8px;
+}

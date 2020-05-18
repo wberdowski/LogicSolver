@@ -2,8 +2,44 @@
 <html>
 <head>
 	<title>LogicSolver</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="res/favicon.png"/>
+	<link rel="stylesheet" href="styles/main.css"/>
+	<script defer src="app.js"></script>
 </head>
 <body>
+	<h1>Kalkulator funkcji przejœæ dla przerzutnika</h1>
+	<table id="tab1">
+		<tr><th>Q<sub>1</sub>Q<sub>2</sub>\X<sub>1</sub>X<sub>2</sub></th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+		<tr><th>00</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+		<tr><th>01</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+		<tr><th>11</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+		<tr><th>10</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+	</table>
 
+	<table id="cheatsheet">
+		<tr><th colspan="2">Q<sub>n</sub> -> Q<sub>n+1</sub></th><th>S</th><th>R</th><th>J</th><th>K</th><th>D</th></tr>
+		<tr><td>0</td><td>0</td><td>0</td><td>---</td><td>0</td><td>---</td><td>0</td></tr>
+		<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>---</td><td>1</td></tr>
+		<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>---</td><td>1</td><td>0</td></tr>
+		<tr><td>1</td><td>1</td><td>---</td><td>0</td><td>---</td><td>0</td><td>1</td></tr>
+	</table>
+
+	<h2>S1</h2>
+	<table id="tabs1" class="results"></table>
+	<h2>R1</h2>
+	<table id="tabr1" class="results"></table>
+	<h2>S2</h2>
+	<table id="tabs2" class="results"></table>
+	<h2>R2</h2>
+	<table id="tabr2" class="results"></table>
+	<script>
+		window.addEventListener('load', function () {
+			createTableS1(tabs1, 0);
+			createTableR1(tabr1, 0);
+			createTableS1(tabs2, 1);
+			createTableR1(tabr2, 1);
+		})
+	</script>
 </body>
 </html>
