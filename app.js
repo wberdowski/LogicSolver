@@ -14,7 +14,7 @@ let tab = [
 	["0000","0000","0000","0000"]
 ];
 
-let table = document.querySelector("#tab1");
+let table = document.querySelector("#tabInput");
 let inputs = table.querySelectorAll("input");
 let headers = table.querySelectorAll("th");
 
@@ -54,6 +54,11 @@ let r1 = createTable(document.querySelector("#tabr1"));
 let s2 = createTable(document.querySelector("#tabs2"));
 let r2 = createTable(document.querySelector("#tabr2"));
 
+let j1 = createTable(document.querySelector("#tabj1"));
+let k1 = createTable(document.querySelector("#tabk1"));
+let j2 = createTable(document.querySelector("#tabj2"));
+let k2 = createTable(document.querySelector("#tabk2"));
+
 update();
 
 window.onbeforeunload = function() {
@@ -61,10 +66,15 @@ window.onbeforeunload = function() {
 };
 
 function update(){
-	setTableData(s1, tab,"s", 0);
-	setTableData(r1, tab,"r", 0);
-	setTableData(s2, tab,"s", 1);
-	setTableData(r2, tab,"r", 1);
+	setTableData(s1, tab,"sr","s", 0);
+	setTableData(r1, tab,"sr","r", 0);
+	setTableData(s2, tab,"sr","s", 1);
+	setTableData(r2, tab,"sr","r", 1);
+
+	setTableData(j1, tab,"jk","j", 0);
+	setTableData(k1, tab,"jk","k", 0);
+	setTableData(j2, tab,"jk","j", 1);
+	setTableData(k2, tab,"jk","k", 1);
 }
 
 function createTable(tabEle){
@@ -94,17 +104,25 @@ function createTable(tabEle){
 	return tdArr;
 }
 
-function setTableData(tdArr, tab, key, colIdx){
+function setTableData(tdArr, tab, transform, key, colIdx){
 	for(let i = 0; i < 16; i++){
 		let y = parseInt(i / 4);
 		let x = i % 4;
 		let val = tab[y][x];
 		let qn = headers[5 + y].textContent[colIdx];
 		let q = val[colIdx]; // First digit
-		if(key == "s"){
-			tdArr[i].textContent = srTransform(qn, q).s;
-		} else if(key == "r"){
-			tdArr[i].textContent = srTransform(qn, q).r;
+		if(transform == "sr"){
+			if(key == "s"){
+				tdArr[i].textContent = srTransform(qn, q).s;
+			} else if(key == "r"){
+				tdArr[i].textContent = srTransform(qn, q).r;
+			}
+		} else if(transform == "jk"){
+			if(key == "j"){
+				tdArr[i].textContent = jkTransform(qn, q).j;
+			} else if(key == "k"){
+				tdArr[i].textContent = jkTransform(qn, q).k;
+			}
 		}
 	}
 }
@@ -144,5 +162,17 @@ function srTransform(q1, q2){
 		return {s: "0", r: "1"};
 	} else if(q1 == "1" && q2 == "1"){
 		return {s: "-", r: "0"};
+	}
+}
+
+function jkTransform(q1, q2){
+	if(q1 == "0" && q2 == "0"){
+		return {j: "0", k: "-"};
+	} else if(q1 == "0" && q2 == "1"){
+		return {j: "1", k: "-"};
+	} else if(q1 == "1" && q2 == "0"){
+		return {j: "-", k: "1"};
+	} else if(q1 == "1" && q2 == "1"){
+		return {j: "-", k: "0"};
 	}
 }

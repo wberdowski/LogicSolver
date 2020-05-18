@@ -1,6 +1,10 @@
 body {
 	font-size: 14px;
 	font-family: "Roboto", sans-serif;
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
 }
 
 button {
@@ -35,11 +39,11 @@ table td, table th {
 }
 
 table th {
-	background-color: #67707b;
-	color: #fff;
+	background-color: #ccc;
+	color: #000;
 	padding: 8px;
 	font-size: 16px;
-	border: 1px solid rgba(0,0,0,0.3);
+	border: 1px solid #aaa;
 }
 
 table td {
@@ -70,10 +74,18 @@ table input::placeholder {
 	color: #ccc;
 }
 
+.page-content {
+	flex: 1;
+	overflow: auto;
+	padding: 20px;
+}
+
+#tabInput {
+	margin: 0 auto;
+}
+
 #cheatsheet {
-	position: fixed;
-	top: 8px;
-	right: 8px;
+	margin: 0 auto;
 }
 
 .results-grid {
@@ -82,7 +94,7 @@ table input::placeholder {
 }
 
 .results-row {
-	flex: 1;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
 }
@@ -97,4 +109,43 @@ table input::placeholder {
 .results td {
 	padding: 8px;
 	width: 40px;
+}
+
+.sidebar {
+	max-width: 300px;
+	flex: 0.5;
+	height: 100vh;
+	background-color: #eee;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar .nav {
+	flex: 1;
+}
+
+.footer {
+	text-align: center;
+	color: #aaa;
+	font-size: 14px;
+	padding: 16px;
+}
+
+.header {
+	text-align: center;
+	padding: 16px;
+}
+
+.nav .nav-item {
+	padding: 8px;
+	background: #ddd;
+	font-weight: bold;
+	margin: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.nav .nav-item[selected] {
+	background: #07f;
+	color: #fff;
 }
