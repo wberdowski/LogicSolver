@@ -28,6 +28,12 @@ body {
 	box-shadow: 0 0 0 4px rgba(102, 174, 255, 0.5);
 }
 
+.button-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
@@ -64,11 +70,11 @@ table tr:nth-child(odd) td {
 }
 
 table input {
-	width: 60px;
+	width: 48px;
 	border: none;
 	text-align: center;
 	padding: 16px;
-	font-size: 24px;
+	font-size: 20px;
 	font-family: "Consolas", sans-serif;
 	outline: none;
 	background: none;
@@ -82,28 +88,36 @@ table input::placeholder {
 	color: #ccc;
 }
 
-.page-content {
+.page-section {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
-	overflow: auto;
-	padding: 20px;
+	height: 100vh;
 }
 
 .page-header {
-	padding: 4px;
-	margin-bottom: 20px;
+	padding: 20px;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 1px 10px rgba(0,0,0,0.07);
+	z-index: 1;
 }
 
 .page-header .category {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
 	color: rgba(0,0,0,0.5);
-	padding: 4px;
+	padding: 2px;
 }
 
 .page-header .title {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
-	padding: 4px
+	padding: 2px;
+}
+
+.page-content {
+	display: flex;
+	overflow: auto;
 }
 
 #tabInput {
@@ -145,6 +159,7 @@ table input::placeholder {
 	display: flex;
 	flex-direction: column;
 	border-right: 1px solid #ddd;
+	z-index: 10;
 }
 
 .sidebar .nav {
@@ -205,4 +220,24 @@ table input::placeholder {
 
 form {
 	display: inline-block;
+}
+
+.split {
+	flex: 1;
+	display: flex;
+}
+
+.vertical {
+	flex-direction: row;
+}
+
+.panel {
+	flex: 1;
+	border-right: 1px solid #ddd;
+	padding: 20px;
+	overflow: auto;
+}
+
+.panel:last-of-type {
+	border-right: none;
 }

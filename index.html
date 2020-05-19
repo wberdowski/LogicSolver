@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="res/favicon.png"/>
 	<link rel="stylesheet" href="styles/main.css"/>
-	<script defer src="app.js"></script>
+	<script src="app.js"></script>
 </head>
 <body>
 	<div class="sidebar">
@@ -25,92 +25,21 @@
 		<div class="nav">
 			<div class="section-header">Przerzutniki</div>
 			<div class="item" selected>Kalkulator Karnaugh dla RS i JK</div>
+			<div class="item">Kalkulator Karnaugh dla stanów licznika</div>
 		</div>
 		<div class="footer">
 			© 2020 Wojciech Berdowski 
 		</div>
 	</div>
-	<div class="page-content">
+	<div class="page-section">
 		<div class="page-header">
 			<div class="category">Przerzutniki</div>
 			<div class="title">Kalkulator tabeli Karnaugh dla przerzutników RS i JK</div>
 		</div>
-
-		<div class="box">
-			<form>
-				<table id="tabInput" class="karnaugh">
-					<tr><th>Q<sub>1</sub>Q<sub>2</sub>\X<sub>1</sub>X<sub>2</sub></th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
-					<tr><th>00</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
-					<tr><th>01</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
-					<tr><th>11</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
-					<tr><th>10</th><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
-				</table>
-				
-				<div class="actions">
-					<input type="reset" class="button focusable" value="Wyczyść">
-				</div>
-			</form>
-		</div>
-
-		<div class="results-grid">
-			<div class="results-row">
-				<div class="results-container">
-					<h2>S1</h2>
-					<table id="tabs1" class="results karnaugh"></table>
-				</div>
-
-				<div class="results-container">
-					<h2>R1</h2>
-					<table id="tabr1" class="results karnaugh"></table>
-				</div>
-			</div>
-			<div class="results-row">
-				<div class="results-container">
-					<h2>S2</h2>
-					<table id="tabs2" class="results karnaugh"></table>
-				</div>
-
-				<div class="results-container">
-					<h2>R2</h2>
-					<table id="tabr2" class="results karnaugh"></table>
-				</div>
-			</div>
-		</div>
-
-		<div class="results-grid">
-			<div class="results-row">
-				<div class="results-container">
-					<h2>J1</h2>
-					<table id="tabj1" class="results karnaugh"></table>
-				</div>
-
-				<div class="results-container">
-					<h2>K1</h2>
-					<table id="tabk1" class="results karnaugh"></table>
-				</div>
-			</div>
-			<div class="results-row">
-				<div class="results-container">
-					<h2>J2</h2>
-					<table id="tabj2" class="results karnaugh"></table>
-				</div>
-
-				<div class="results-container">
-					<h2>K2</h2>
-					<table id="tabk2" class="results karnaugh"></table>
-				</div>
-			</div>
-		</div>
-
-		<h2>Tabela wzbudzeń przerzutników RS i JK</h2>
-
-		<table id="cheatsheet">
-			<tr><th colspan="2">Q<sub>n</sub> -> Q<sub>n+1</sub></th><th>S</th><th>R</th><th>J</th><th>K</th><th>D</th></tr>
-			<tr><td>0</td><td>0</td><td>0</td><td>-</td><td>0</td><td>-</td><td>0</td></tr>
-			<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>-</td><td>1</td></tr>
-			<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>-</td><td>1</td><td>0</td></tr>
-			<tr><td>1</td><td>1</td><td>-</td><td>0</td><td>-</td><td>0</td><td>1</td></tr>
-		</table>
+		<div class="page-content"></div>
+		<script>
+			loadSubpage("pages/calc_karnaugh_rs_jk");
+		</script>
 	</div>
 </body>
 </html>
