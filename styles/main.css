@@ -205,12 +205,27 @@ table input::placeholder {
 }
 
 .actions {
+	display: flex;
+	flex-direction: row;
 	text-align: right;
 	padding: 8px;
 	background: #fff;
 	border-radius: 0 0 4px 4px;
 	border: 1px solid #ddd;
 	border-top: none;
+	align-items: center;
+}
+
+.hint {
+	display: block;
+	flex: 1;
+	flex-grow: 1;
+	overflow: hidden;
+	color: rgba(0,0,0,0.7);
+	word-wrap: break-word;
+	text-align: left;
+	font-size: 12px;
+	margin-right: 8px;
 }
 
 .box {
@@ -219,7 +234,7 @@ table input::placeholder {
 }
 
 form {
-	display: inline-block;
+	max-width: 432px;
 }
 
 .split {
