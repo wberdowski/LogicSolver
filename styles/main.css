@@ -138,7 +138,7 @@ table input::placeholder {
 }
 
 .sidebar {
-	max-width: 300px;
+	max-width: 320px;
 	flex: 0.5;
 	height: 100vh;
 	background-color: #fff;
