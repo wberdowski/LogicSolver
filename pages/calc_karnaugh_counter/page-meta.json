@@ -1,0 +1,9 @@
+{
+	"title": "Kalkulator Karnaugh dla stanów licznika",
+	"path":{
+		"body": "body.html",
+		"scripts": [
+			"script.js"
+		]
+	}	
+}

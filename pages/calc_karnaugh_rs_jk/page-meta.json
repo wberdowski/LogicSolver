@@ -1,0 +1,9 @@
+{
+	"title": "Kalkulator tabeli Karnaugh dla przerzutników RS i JK",
+	"path":{
+		"body": "body.html",
+		"scripts": [
+			"script.js"
+		]
+	}	
+}

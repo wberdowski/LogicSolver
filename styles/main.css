@@ -184,17 +184,20 @@ table input::placeholder {
 
 .nav .item {
 	padding: 10px;
-	background: rgba(0,0,0,0.07);
 	margin: 4px;
 	border-radius: 4px;
 	cursor: pointer;
 	font-size: 14px;
+	font-weight: bold;
+}
+
+.nav .item:hover {
+	background: rgba(0,0,0,0.07);
 }
 
 .nav .item[selected] {
 	background: #07f;
 	color: #fff;
-	font-weight: bold;
 }
 
 .nav .section-header {
