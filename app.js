@@ -8,17 +8,23 @@ window.addEventListener('load', function () {
 		let target = item.getAttribute("data");
 		let url = target.substr(6);
 		
-		if(location.hash == "#" + url){
-			setSelected(item);
-		} else {
-			setSelected(navItems[0]);
-		}
-		
 		item.addEventListener("click", function(){
-			setSelected(item);
+			setUrl(item);
 		});
 	}
+	
+	if(location.hash != ""){
+		let item = document.querySelector(".nav .item[data=\"pages/" + location.hash.substr(1) + "\"]");
+		setSelected(item);
+	} else {
+		setUrl(navItems[0]);
+	}
 });
+
+function setUrl(item){
+	let target = item.getAttribute("data");
+	location.hash = target.substr(6);
+}
 
 function setSelected(item){
 	let target = item.getAttribute("data");
@@ -40,7 +46,8 @@ function loadSubpage(url){
 		// Load body
 		sendGetReq(url + "/body.html",function(req){
 			let text = req.responseText;
-			document.querySelector(".page-content").innerHTML = text;
+			let container = document.querySelector(".page-content");
+			container.innerHTML = text;
 			
 			// Load script
 			loadScripts(url, meta);

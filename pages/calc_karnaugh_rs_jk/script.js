@@ -127,32 +127,6 @@ function setTableData(tdArr, tab, transform, key, colIdx){
 	}
 }
 
-function createTableS1(tabEle, colIdx){
-	// Add column header
-	let headerTr = document.createElement("tr");
-	headerTr.innerHTML = "<th>Q<sub>1</sub>Q<sub>2</sub>\\X<sub>1</sub>X<sub>2</sub></th><th>00</th><th>01</th><th>11</th><th>10</th>";
-	tabEle.appendChild(headerTr);
-
-	for(let y = 0; y < 4; y++){
-		let tr = document.createElement("tr");
-
-		// Add row header
-		let headerTh = document.createElement("th");
-		headerTh.textContent = headers[5 + y].textContent;
-		tr.appendChild(headerTh);
-
-		for(let x = 0; x < 4; x++){
-			let td = document.createElement("td");		
-			let qn = headers[5 + y].textContent[colIdx];
-			let q = tab[y][x][colIdx]; // First digit
-			td.textContent = srTransform(qn, q).s;
-
-			tr.appendChild(td);
-		}
-		tabEle.appendChild(tr);
-	}
-}
-
 function srTransform(q1, q2){
 	if(q1 == "0" && q2 == "0"){
 		return {s: "0", r: "-"};

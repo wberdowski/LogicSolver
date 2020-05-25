@@ -71,10 +71,10 @@ table tr:nth-child(odd) td {
 }
 
 table input {
-	width: 48px;
+	width: 100%;
 	border: none;
 	text-align: center;
-	padding: 16px;
+	padding: 16px 0;
 	font-size: 20px;
 	font-family: "Consolas", sans-serif;
 	outline: none;
