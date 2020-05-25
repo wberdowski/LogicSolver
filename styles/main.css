@@ -119,6 +119,7 @@ table input::placeholder {
 .page-content {
 	display: flex;
 	overflow: auto;
+	flex: 1;
 }
 
 #tabInput {
@@ -145,6 +146,7 @@ table input::placeholder {
 
 .results {
 	margin: 8px;
+	width: auto;
 }
 
 .results td {
