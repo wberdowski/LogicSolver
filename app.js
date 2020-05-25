@@ -10,6 +10,8 @@ window.addEventListener('load', function () {
 		
 		if(location.hash == "#" + url){
 			setSelected(item);
+		} else {
+			setSelected(navItems[0]);
 		}
 		
 		item.addEventListener("click", function(){
