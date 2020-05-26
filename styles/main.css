@@ -18,6 +18,7 @@ body {
 	min-width: 100px;
 	outline: none;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .button:active {
@@ -32,6 +33,10 @@ body {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 4px;
+}
+
+.toolbar {
+	padding: 8px 0;
 }
 
 table {
