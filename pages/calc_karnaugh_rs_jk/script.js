@@ -36,10 +36,22 @@ for(let i = 0; i < inputs.length; i++){
 			}
 		}
 
+		let idx = input.getAttribute("idx");
+
 		if(input.value.length == 4){
-			let idx = input.getAttribute("idx");
 			tab[parseInt(idx / 4)][idx % 4] = input.value;
 			update();
+		} else {
+			tab[parseInt(idx / 4)][idx % 4] = "0000";
+			update();
+		}
+		
+		if(input.value.length == 0 || input.value.length == 4){
+			input.removeAttribute("error");
+			input.title = "";
+		} else {
+			input.setAttribute("error","");
+			input.title = "Błąd: Wartość jest zbyt krótka. Wymagana długość to 4 znaki.";
 		}
 	});
 

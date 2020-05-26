@@ -48,7 +48,7 @@ for(let i = 0; i < inputs.length; i++){
 	});
 	
 	input.placeholder = "0";
-	input.maxLength = "4";
+	input.maxLength = "1";
 }
 
 let jc = createTable(document.querySelector("#tabjc"));
