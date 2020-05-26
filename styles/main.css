@@ -99,6 +99,23 @@ table input[error]:not(:focus){
 	box-shadow: 0 0 0 3px #f40;
 }
 
+.diagonal-split {
+	display: flex;
+	flex-direction: column;
+	background-image: url("../res/diagonal-split.svg");
+	margin: -8px;
+	padding: 8px;
+}
+
+.diagonal-split .top {
+	text-align: right;
+}
+
+.diagonal-split .bottom {
+	text-align: left;
+	margin-right: 2em;
+}
+
 .page-section {
 	display: flex;
 	flex-direction: column;

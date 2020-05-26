@@ -92,7 +92,7 @@ function update(){
 function createTable(tabEle){
 	// Add column header
 	let headerTr = document.createElement("tr");
-	headerTr.innerHTML = "<th>Q<sub>1</sub>Q<sub>2</sub>\\X<sub>1</sub>X<sub>2</sub></th><th>00</th><th>01</th><th>11</th><th>10</th>";
+	headerTr.innerHTML = "<th><div class=\"diagonal-split\"><div class=\"top\">Q<sub>1</sub>Q<sub>2</sub></div><div class=\"bottom\">X<sub>1</sub>X<sub>2</sub></div></div></th><th>00</th><th>01</th><th>11</th><th>10</th>";
 	tabEle.appendChild(headerTr);
 	let tdArr = [];
 

@@ -92,7 +92,7 @@ function getHeaderIndex(qb, qa){
 function createTable(tabEle){
 	// Add column header
 	let headerTr = document.createElement("tr");
-	headerTr.innerHTML = "<th>Q<sub>C</sub>\\Q<sub>B</sub>Q<sub>A</sub></th><th>00</th><th>01</th><th>11</th><th>10</th>";
+	headerTr.innerHTML = "<th><div class=\"diagonal-split\"><div class=\"top\">Q<sub>C</sub></div><div class=\"bottom\">Q<sub>B</sub>Q<sub>A</sub></div></div></th><th>00</th><th>01</th><th>11</th><th>10</th>";
 	tabEle.appendChild(headerTr);
 	let tdArr = [];
 
